@@ -54,7 +54,7 @@
 		moment.relativeTimeThreshold('m',60);
 		moment.relativeTimeThreshold('h',23);
 		moment.relativeTimeThreshold('dd',28);
-		moment.relativeTimeThreshold('dm',45);
+		moment.relativeTimeThreshold('dm',31);
 		moment.relativeTimeThreshold('dy',365);
 
 		if (yDiff) {
