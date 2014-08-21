@@ -52,10 +52,9 @@
 
 		moment.relativeTimeThreshold('s',60);
 		moment.relativeTimeThreshold('m',60);
-		moment.relativeTimeThreshold('h',23);
-		moment.relativeTimeThreshold('dd',28);
-		moment.relativeTimeThreshold('dm',31);
-		moment.relativeTimeThreshold('dy',365);
+		moment.relativeTimeThreshold('h',24);
+		moment.relativeTimeThreshold('d',28);
+		moment.relativeTimeThreshold('M',12);
 
 		if (yDiff) {
 			result.push(moment.duration(yDiff,'year').humanize());

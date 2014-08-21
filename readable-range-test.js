@@ -108,6 +108,7 @@ describe("preciseDiff", function() {
 	describe("combinations", function() {
 		it("all values", function() {
 			test('2001-11-12 13:01:43', '2014-02-01 01:03:01', '12 years 2 months 19 days 12 hours a minute a few seconds');
+			test('2000-05-04 12:01:48', '2000-05-28 12:01:46', '23 days 23 hours 59 minutes a few seconds');
 		});
 		it("multiple values", function() {
 			test('2013-10-21 10:15:40', '2014-02-02 01:01:01', '3 months 11 days 14 hours 45 minutes a few seconds');

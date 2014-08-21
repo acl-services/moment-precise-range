@@ -1,0 +1,20 @@
+{
+  "name": "moment-precise-range",
+  "version": "0.0.2",
+  "dependencies": {
+    "moment": "https://github.com/moment/moment.git#2.8.0"
+  },
+  "homepage": "https://github.com/acl-services/ax-shared",
+  "authors": [
+    "ACL Services"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "tests"
+  ],
+  "devDependencies": {
+    "jasmine": "2.0.1"
+  }
+}
