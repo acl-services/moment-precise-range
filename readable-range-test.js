@@ -10,21 +10,21 @@ describe("preciseDiff", function() {
 		});
 
 		it("first date after second", function() {
-			test('2013-01-01 00:00:01', '2013-01-01 00:00:00', 'a few seconds');
+			test('2013-01-01 00:00:01', '2013-01-01 00:00:00', 'A few seconds');
 		});
 
 		it("second date after first", function() {
-			test('2013-01-01 00:00:00', '2013-01-01 00:00:01', 'a few seconds');
+			test('2013-01-01 00:00:00', '2013-01-01 00:00:01', 'A few seconds');
 		});
 	});
 
 	describe("single/plural", function() {
 		it("multiple seconds", function() {
-			test('2013-01-01 00:00:00', '2013-01-01 00:00:02', 'a few seconds');
+			test('2013-01-01 00:00:00', '2013-01-01 00:00:02', 'A few seconds');
 		});
 
 		it("one minute", function() {
-			test('2013-01-01 00:00:00', '2013-01-01 00:01:00', 'a minute');
+			test('2013-01-01 00:00:00', '2013-01-01 00:01:00', 'A minute');
 		});
 
 		it("multiple minutes", function() {
@@ -32,7 +32,7 @@ describe("preciseDiff", function() {
 		});
 
 		it("one hour", function() {
-			test('2013-01-01 00:00:00', '2013-01-01 01:00:00', 'an hour');
+			test('2013-01-01 00:00:00', '2013-01-01 01:00:00', 'An hour');
 		});
 
 		it("multiple hours", function() {
@@ -40,7 +40,7 @@ describe("preciseDiff", function() {
 		});
 
 		it("one day", function() {
-			test('2013-01-01 00:00:00', '2013-01-02 00:00:00', 'a day');
+			test('2013-01-01 00:00:00', '2013-01-02 00:00:00', 'A day');
 		});
 
 		it("multiple days", function() {
@@ -48,7 +48,7 @@ describe("preciseDiff", function() {
 		});
 
 		it("one month", function() {
-			test('2013-01-01 00:00:00', '2013-02-01 00:00:00', 'a month');
+			test('2013-01-01 00:00:00', '2013-02-01 00:00:00', 'A month');
 		});
 
 		it("multiple months", function() {
@@ -56,7 +56,7 @@ describe("preciseDiff", function() {
 		});
 
 		it("one year", function() {
-			test('2013-01-01 00:00:00', '2014-01-01 00:00:00', 'a year');
+			test('2013-01-01 00:00:00', '2014-01-01 00:00:00', 'A year');
 		});
 
 		it("multiple years", function() {
@@ -66,7 +66,7 @@ describe("preciseDiff", function() {
 
 	describe("counting back", function() {
 		it("seconds", function() {
-			test('2013-01-01 00:02:10', '2013-01-01 00:03:05', 'a few seconds');
+			test('2013-01-01 00:02:10', '2013-01-01 00:03:05', 'A few seconds');
 		});
 		it("minutes", function() {
 			test('2013-01-01 02:10:00', '2013-01-01 03:05:00', '55 minutes');
@@ -84,15 +84,15 @@ describe("preciseDiff", function() {
 
 	describe("days across month boundaries", function() {
 		it("start month has more days than last full month", function() {
-			test('2013-01-31 00:00:00', '2013-03-01 00:00:00', 'a month a day');
-			test('2013-01-30 00:00:00', '2013-03-01 00:00:00', 'a month a day');
-			test('2013-01-29 00:00:00', '2013-03-01 00:00:00', 'a month a day');
-			test('2013-01-28 00:00:00', '2013-03-01 00:00:00', 'a month a day');
-			test('2013-01-27 00:00:00', '2013-03-01 00:00:00', 'a month 2 days');
+			test('2013-01-31 00:00:00', '2013-03-01 00:00:00', 'A month a day');
+			test('2013-01-30 00:00:00', '2013-03-01 00:00:00', 'A month a day');
+			test('2013-01-29 00:00:00', '2013-03-01 00:00:00', 'A month a day');
+			test('2013-01-28 00:00:00', '2013-03-01 00:00:00', 'A month a day');
+			test('2013-01-27 00:00:00', '2013-03-01 00:00:00', 'A month 2 days');
 
-			test('2013-05-31 00:00:00', '2013-07-01 00:00:00', 'a month a day');
-			test('2013-05-30 00:00:00', '2013-07-01 00:00:00', 'a month a day');
-			test('2013-05-29 00:00:00', '2013-07-01 00:00:00', 'a month 2 days');
+			test('2013-05-31 00:00:00', '2013-07-01 00:00:00', 'A month a day');
+			test('2013-05-30 00:00:00', '2013-07-01 00:00:00', 'A month a day');
+			test('2013-05-29 00:00:00', '2013-07-01 00:00:00', 'A month 2 days');
 		});
 		it("start month has fewer days than last full month", function() {
 			test('2013-04-29 00:00:00', '2013-08-01 00:00:00', '3 months 3 days');
@@ -109,6 +109,9 @@ describe("preciseDiff", function() {
 		it("all values", function() {
 			test('2001-11-12 13:01:43', '2014-02-01 01:03:01', '12 years 2 months 19 days 12 hours a minute a few seconds');
 			test('2000-05-04 12:01:48', '2000-05-28 12:01:46', '23 days 23 hours 59 minutes a few seconds');
+			test('2000-05-01 12:01:48', '2000-08-31 12:01:46', '4 months 23 hours 59 minutes a few seconds');
+			test('2000-05-01 12:01:48', '2000-08-29 12:01:46', '3 months 27 days 23 hours 59 minutes a few seconds');
+			test('2001-01-01 12:01:48', '2001-02-28 12:01:50', 'A month 27 days a few seconds');
 		});
 		it("multiple values", function() {
 			test('2013-10-21 10:15:40', '2014-02-02 01:01:01', '3 months 11 days 14 hours 45 minutes a few seconds');

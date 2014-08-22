@@ -4,6 +4,11 @@
 		return moment.preciseDiff(this, d2);
 	};
 	moment.preciseDiff = function(d1, d2) {
+		moment.relativeTimeThreshold('s',60);
+		moment.relativeTimeThreshold('m',60);
+		moment.relativeTimeThreshold('h',24);
+		moment.relativeTimeThreshold('d',28);
+		moment.relativeTimeThreshold('M',12);
 
 		var m1 = moment(d1), m2 = moment(d2);
 		if (m1.isSame(m2)) {
@@ -43,18 +48,17 @@
 			}
 			mDiff--;
 		}
+		if (dDiff >= moment.relativeTimeThreshold('d')) {
+			dDiff = 0;
+			mDiff++;
+		}
+
 		if (mDiff < 0) {
 			mDiff = 12 + mDiff;
 			yDiff--;
 		}
 
 		var result = [];
-
-		moment.relativeTimeThreshold('s',60);
-		moment.relativeTimeThreshold('m',60);
-		moment.relativeTimeThreshold('h',24);
-		moment.relativeTimeThreshold('d',28);
-		moment.relativeTimeThreshold('M',12);
 
 		if (yDiff) {
 			result.push(moment.duration(yDiff,'year').humanize());
@@ -75,7 +79,9 @@
 			result.push(moment.duration(secDiff,'second').humanize());
 		}
 
-		return result.join(' ');
+		result = result.join(' ');
+		result = result.charAt(0).toUpperCase() + result.slice(1);
+		return result;
 	};
 
 }(moment));
